@@ -1,0 +1,1164 @@
+@charset "utf-8";
+/* CSS Document */
+
+/* General website styles */
+
+body{
+	/* Applies to all elements within the body tag */
+	margin: 0;
+	padding: 0;
+	background-color: #ffefd2;
+}
+
+h1, h2, h3, h4, h5, h6, a{
+	/* Applies to all heading and link elements */
+	font-family: maple-web, sans-serif;
+	font-weight: 700;
+	font-style: normal;
+}
+
+p, li{
+	/* Appplies to all paragraphy and list elements */
+	font-family: supria-sans,sans-serif;
+	font-weight: 300;
+	font-style: normal;
+}
+
+/* Header */
+
+nav{
+	position: fixed; /* Keeps the navigation bar at the top of the screen when scrolling */
+    width: 100%; /* Sets width to that of the web browser */
+    top: 0; /* Ensures there's no gap between the top of the webpage */
+	z-index: 100; /* Brings element in front of other elements with a lower z-index value */
+}
+
+.topnav {
+  overflow: hidden; /* The hidden property doesn't allow elements that go outside of their bounding boxes to be rendered */
+  background-color: #ffefd2;
+  text-align: center;
+  display: inline-flex; /* inline-flex property displays elements one after the other horizontall fits those elements in an efficient and aesthetic way within its boundaries */
+  width: 100%;
+  height: 100px;
+  webkit-transition: 0.2s ease-in-out; /* All transition animation times and types. Different prefixes for different browser types */
+  -moz-transition: 0.2s ease-in-out;
+  -ms-transition: 0.2s ease-in-out;
+  -o-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+}
+
+.topnav a {
+  float: left; /* Keeps the element to the left, depending on its parent element */
+  display: block; /* Displays elements in a vertical order */
+  color: #000; /* Sets the colour to black */
+  text-align: center;
+  padding: 14px 16px; /* Sets the top and bottom padding values to 14px and the left and right ones to 16px */
+  text-decoration: none; /* Ensures there's no underline on links */
+  font-size: 17px; 
+  margin: auto; /* Automatically sets the element's margin values based on its parent element */
+  border-radius: 4px; /* Creates rounded corners for the element */
+}
+
+.topnav a:hover { /* Sets element styles when the user hovers over it */
+    background-color: #eadbbf;
+    -webkit-text-stroke: 0.5px black; /* Give a 0.5 pixel thick outline to the element text */
+    color: white; /* Sets the colour to white */
+    text-shadow: 0px 0px 5px #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000; /* Produces a black shadow behind the element */
+}
+
+.navlink.smaller{
+	margin: auto 30px; /* Keeps the elements top and bottom margins set to auto but changes the left and right margins to 30px */
+}
+
+.active {
+  background-color: #ffefd2;
+  color: white;
+}
+
+.topnav .icon {
+  display: none; /* Icon is not displayed when display is set to none */
+}
+
+#nav-left{
+	transform: rotate(180deg); /* Rotates the element 180 degrees */
+    margin: auto auto auto -150px; /* Sets all margins to auto except the left one which is set to -150px */
+}
+
+#nav-right{
+	margin: auto -150px auto auto /* Sets all margins to auto except the right one which is set to -150px */
+}
+
+.logo.smaller{
+	margin: 100px auto !important;
+	position: relative;
+	padding: 14px 16px !important;
+	transform: translate3d(0px, -100px, 0px); /* Transforms the element in 3D space. Used to show the logo animate when the user scrolls */
+}
+
+.topnav.smaller {
+	height: 120px;
+	background-color: #ffefd2;
+}
+
+#bars.smaller {
+    filter: invert(0%);
+}
+
+#logo-image{
+	max-width: 200px;
+	-webkit-filter: drop-shadow(0px 0px 4px #000); /* The filter style allows a visual element to be applied around an object. In this case it is adding a drop shadow to the logo. Using filter allows the style to be applied around a PNG image, hence why it's used here */
+    filter: drop-shadow(0px 0px 4px #000);
+}
+
+.logo-resp.smaller{
+	max-width: 150px !important;
+}
+
+/* Slideshow Section */
+
+.slideshow-container {
+  padding-top: 100px;
+  width: 100%;
+  position: relative;
+  margin: auto;
+  overflow: hidden;
+  background-color: #ffefd2;
+}
+
+.mySlides {
+  display: none; /* Hide the images by default */
+  margin-top: -60px;
+  margin-bottom: -150px;
+}
+
+.feather{
+	position: absolute;
+    top: 0;
+    -webkit-box-shadow: inset 0px -100px 80px -37px rgba(255,239,210,1); /* Creates an inset shadow in the element that produces a feathering effect on the slideshow image */
+	-moz-box-shadow: inset 0px -100px 80px -37px rgba(255,239,210,1);
+	box-shadow: inset 0px -100px 80px -37px rgba(255,239,210,1);
+    width: 120%; /* Width 120% and margin-left: -100px hides the sides of the feather element as the shadows applied to the sides of the element as well. This ensures the side feathering will be outside of the viewport and therefore won't be seen */
+    height: 100%;
+    margin-left: -100px;
+	background: rgba(52, 58, 52, 0.3);
+}
+
+/* Caption text */
+
+.text {
+    color: #f2f2f2;
+    padding: 8px 12px;
+    position: absolute;
+    bottom: 40%;
+    width: 40%;
+    text-align: left;
+    left: 10%;
+    text-shadow: 0px 0px 5px #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    -webkit-text-stroke: 0.5px black;
+}
+
+/* Fading animation */
+
+.fade {
+  -webkit-animation-name: fade; /* Allows for a custom animation. In this case, I've called it fade */
+  -webkit-animation-duration: 15s; /* Sets the animation duration. Set to 15 seconds as there are 3 images that change every 4 seconds. Keyframes below create a smooth change between each slide, allowing for the 3 second difference ((15 / 3)-4) * 3 = 3 seconds */
+  animation-name: fade;
+  animation-duration: 15s;
+}
+
+@-webkit-keyframes fade { /* Used to set custom keyframing animations. Each third of the animation is for each of the 3 images. Percentages are used to determine how far through the animation the keyframes are. This animation fades between black and the chosen image overlay colour to produce a fading effect */
+	0%{
+		background-color: #000;
+	}
+	5%{
+		background-color: rgba(52, 58, 52, 0.3);
+	}
+	24%{
+		background-color: rgba(52, 58, 52, 0.3);
+	}
+	32%{
+		background-color: #000;
+	}
+	38%{
+		background-color: rgba(52, 58, 52, 0.3);
+	}
+	57%{
+		background-color: rgba(52, 58, 52, 0.3);
+	}
+	65%{
+		background-color: #000;
+	}
+	71%{
+		background-color: rgba(52, 58, 52, 0.3);
+	}
+	90%{
+		background-color: rgba(52, 58, 52, 0.3);
+	}
+	98%{
+		background-color: #000;
+	}
+}
+
+@keyframes fade {
+	0%{
+		background-color: #000;
+	}
+	5%{
+		background-color: rgba(52, 58, 52, 0.3);
+	}
+	24%{
+		background-color: rgba(52, 58, 52, 0.3);
+	}
+	32%{
+		background-color: #000;
+	}
+	38%{
+		background-color: rgba(52, 58, 52, 0.3);
+	}
+	57%{
+		background-color: rgba(52, 58, 52, 0.3);
+	}
+	65%{
+		background-color: #000;
+	}
+	71%{
+		background-color: rgba(52, 58, 52, 0.3);
+	}
+	90%{
+		background-color: rgba(52, 58, 52, 0.3);
+	}
+	98%{
+		background-color: #000;
+	}	
+}
+
+/* Product Showcase Section */
+
+.product-showcase{
+	margin: auto;
+    border: 0; /* These three border styling options removes the padding and spacing in between each cell in the table */
+    border-spacing: 0px;
+    border-collapse: collapse;
+}
+
+.product-showcase > tbody {
+	display: table-row; /* Displays as a table row allowing for equal spacing making it easy to line up the images */
+}
+
+.product-showcase > tbody > tr > td:not(.product) {
+	width: 50%; /* Sets the width of all td elements excluding the actual products to 500px */
+    padding: 0;
+}
+
+.product-container{
+	margin: auto;
+    display: grid;
+}
+
+.product-container > img{
+	-webkit-filter: drop-shadow(0px 0px 4px #000);
+    filter: drop-shadow(0px 0px 4px #000);
+}
+
+.product-container > * {
+	max-width: 150px;
+    margin: auto;
+	padding-bottom: 15px;
+	text-align: center;
+}
+
+.product-container > h3 > a {
+	color: black;
+    text-decoration: none;
+}
+
+button {
+	border-radius: 4px;
+    color: white;
+    background-color: #eca43b;
+    border-color: #d39030;
+    border-style: solid;
+    border-width: 3px;
+    padding: 12px;
+    font-family: maple-web;
+    font-size: 16px;
+	cursor: pointer;
+	text-shadow: none !important;
+}
+
+button:hover {
+	background-color: #d39030;
+    color: #eaeaea;
+}
+
+.product{
+	width: 25%;
+	padding: 0;
+}
+
+.product-reviews{
+	-webkit-filter: drop-shadow(0px 0px 2px #000) !important;
+    filter: drop-shadow(0px 0px 2px #000) !important;
+	max-width: 100px;
+}
+
+.product-intro{
+	width: 500px;
+	height: 500px;
+	background-size: cover; /* Covers the entire container with the background */
+    background-position-x: -50px; /* Moves the background image 50px to the left */
+    background-repeat: no-repeat; /* Doesn't allow the background image to repeat */
+}
+
+.intro-container{
+	width: 80%;
+    height: 100%;
+    position: relative;
+    margin: auto;
+}
+
+.intro-container > h3{
+	font-size: 30px !important;
+    margin: 0;
+    padding: 40% 0 0 0;
+}
+
+.darken{
+	background-color: rgba(0, 0, 0, 0.25);
+	width: 100%;
+    height: 100%;
+    transform: translateY(-500px); /* Moves the darker area 500px up to cover the container */
+	z-index: -10 !important;
+}
+
+#tattoo-salves{
+	background-image: url("../images/contextimages/scrapingwax.jpg");
+	-webkit-clip-path: polygon(50% 0%, 100% 0, 100% 100%, 0 100%, 0 50%, 5% 25%, 25% 5%); /* Creates a honeycomb design on the corner of the image */
+    clip-path: polygon(50% 0%, 100% 0, 100% 100%, 0 100%, 0 50%, 5% 25%, 25% 5%);
+}
+
+#hand-balms {
+	background-image: url("../images/contextimages/bees.jpg");
+	-webkit-clip-path: polygon(100% 0, 100% 50%, 95% 75%, 75% 95%, 50% 100%, 0 100%, 0 0);
+	clip-path: polygon(100% 0, 100% 50%, 95% 75%, 75% 95%, 50% 100%, 0 100%, 0 0);
+}
+
+#tattoo-salves *, #hand-balms * { /* Applies to all child elements of the tattoo-salves and hand-balms elements */
+	text-align: center;
+    font-size: 18px;
+	z-index: 1;
+    font-weight: 600;
+    color: white;
+    text-shadow: 0px 0px 0px #000, -4px -4px 20px #000, 4px -4px 20px #000, -4px 4px 20px #000, 4px 4px 20px #000;
+}
+
+#tattoo-salves > p, #hand-balms > p { /* Applies to all p elements parented by the tattoo-salves and hand-balms elements */
+	width: 80%;
+	margin: auto;
+}
+
+#tattoo-salves > h3, #hand-balms > h3 {
+	padding: 40% 0 5%;
+    -webkit-text-stroke: 0.5px black;
+    color: white;
+    text-shadow: 0px 0px 5px #000, 0px 0px 10px #000, 1px -1px 0 #000, 0px 0px 15px #000, 1px 1px 0 #000;
+    font-size: 25px;
+    margin: 0;
+}
+
+/* Our Process Section */
+
+.our-process {
+	width: 1000px;
+    margin: auto;
+	text-align: center;
+}
+
+.our-process > h2 {
+    text-align: center;
+    padding: 30px 0;
+	font-size: 30px;
+}
+
+.our-process > div {
+	width: 33%;
+	display: inline-grid;
+	margin: auto;
+}
+
+.our-process > div > * {
+	margin: auto;
+}
+
+.our-process > div > *:nth-child(1) {
+	width: 250px;
+	height: 250px;
+    object-fit: cover;
+	-webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+	clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+}
+
+.our-process > div > *:nth-child(2) {
+	padding-top: 15px;
+}
+
+.our-process > div > *:nth-child(3) {
+	position: absolute;
+    margin: 125px 0 0 302px;
+	max-width: 60px;
+}
+
+.our-process > div:nth-child(3) > img:nth-child(3) {
+	transform: rotate(180deg);
+}
+
+.our-process > div:nth-child(4) > img {
+	background-color: #ffffff;
+}
+
+/* Footer */
+
+footer {
+	width: 100%;
+    margin: auto auto -16px auto;
+    background-color: #ecd7b3;
+}
+
+footer > section > div {
+	width: 1000px;
+    margin: auto;
+}
+
+footer > section > div > h3 {
+	text-align: center;
+	padding-top: 15px;
+}
+
+footer > section > div > form {
+	width: 48%;
+	margin: auto;
+}
+
+footer > section > div > form > input {
+	width: 350px;
+    padding: 12px;
+    border-color: #d39030;
+    border-style: solid;
+    border-width: 3px;
+    border-radius: 4px;
+    font-family: supria-sans, sans-serif;
+    font-weight: bold;
+	background-color: #eaeaea;
+}
+
+footer > section > div > form > input:focus {
+	background-color: #fff;
+}
+
+footer > section > div > form > input:focus::placeholder {
+	color: white;
+}
+
+#footer-lower {
+	width: 1000px;
+    margin: auto;
+}
+
+#footer-left, #footer-right {
+	display: inline-block;
+	width: 49%;
+}
+
+#footer-left > ul > li > a , #footer-right > p > a {
+	text-decoration: none;
+	color: black;
+}
+
+#footer-left {
+	vertical-align: top;
+    padding-top: 30px;
+}
+
+#footer-left > ul {
+	width: 50%;
+    margin: auto;
+}
+
+#footer-left > ul > li {
+	display: inline-block;
+	padding: 15px;
+}
+
+#footer-middle {
+	display: inline-block;
+    height: 10%;
+    width: 2px;
+    margin: 20px auto auto -50px;
+    position: absolute;
+    background-color: #333333;
+}
+
+.social-icon{
+	max-width: 35px;
+}
+
+.social-icon:hover {
+	filter: invert(100%);
+}
+
+/* Responsive CSS */
+
+@media screen and (max-width: 1366px){ /* When the browsing window's width is less than 1366px the following CSS is applied */
+	#nav-left, #nav-right{
+		display: none; /* Navigation bar ends are no longer displayed */
+	}
+	.topnav a.smaller{
+		margin: auto 5%; /* Left and right navigation link margins are set to 5% */
+	}
+	.mySlides{
+		margin-top: -20px !important; /* Moves slide up by 20px. !important overrides any previously set CSS */
+		margin-bottom: -50px !important; /* Cuts the bottom of the slide by 50px */
+	}
+	.text{
+		bottom: 30% !important;
+	}
+}
+
+@media screen and (max-width: 1080px){
+	.text{
+		bottom: 30% !important;
+		font-size: 20px;
+	}
+	.logo-resp{
+		max-width: 180px !important;
+	}
+	.product-showcase{
+		max-width: 50%;
+	}
+	.product-intro {
+		width: 400px !important;
+		height: 400px !important;
+	}
+	.product-container > * {
+		width: 100px !important;
+	}
+	.darken {
+		transform: translateY(-400px) !important;
+	}
+	.our-process {
+		width: 750px !important;
+	}
+	.our-process > div {
+		width: 32% !important;
+		padding: 0.4% !important;
+	}
+	.our-process > div > *:nth-child(1) {
+		width: 200px !important;
+		height: 200px !important;
+	}
+	.our-process > div > *:nth-child(3) {
+		margin: 25px 0 0 215px !important;
+   		max-width: 60px !important;
+	}
+	.our-process > div:nth-child(3) > img:nth-child(3) {
+		margin: 175px 0 0 215px !important;
+	}
+	footer > section > div, #footer-lower {
+		width: 880px !important;
+	}
+	footer > section > div > form > input {
+		width: 297px !important;
+	}
+	#about-content {
+    	width: 70% !important;
+    	margin: auto;
+	}
+	#contact-content {
+		width: 70% !important;
+    	margin: auto;
+	}
+	.product-page {
+		width:70% !important;
+	}
+	#desktop-content {
+		display: none;
+	}
+	#mobile-content {
+		display: table-row !important;
+	}
+}
+
+@media screen and (max-width: 880px){ /* When the browsing window's width is less than 880px the following CSS is applied */
+	.topnav a.smaller{
+		margin: auto 20px; /* Left and right navigation link margins are set to 20px */
+	}
+	.text{
+		bottom: 20% !important;
+		font-size: 18px;
+	}
+	.product-intro {
+		width: 300px !important;
+		height: 300px !important;
+	}
+	.product-container > * {
+		width: 100px !important;
+		padding-bottom: 5px !important;
+	}
+	.darken {
+		transform: translateY(-300px) !important;
+	}
+	.product-container > button {
+		padding: 4px !important;
+	}
+	.intro-container > h3 {
+		padding: 25% 0 0 0 !important;
+	}
+	.intro-container > button {
+		padding: 10px !important;
+	}
+	.our-process {
+		width: 680px !important;
+	}
+	.our-process > div > *:nth-child(3) {
+		margin: 25px 0 0 195px !important;
+	}
+	.our-process > div:nth-child(3) > img:nth-child(3) {
+		margin: 175px 0 0 195px !important;
+	}
+	footer > section > div, #footer-lower {
+		width: 680px !important;
+	}
+	footer > section > div > form {
+		width: 80% !important;
+	}
+	footer > section > div > form > input {
+		width: 90% !important;
+	}
+	footer > section > div > form > button {
+		margin: 10px auto !important;
+    	display: block !important;
+	}
+	#footer-left > ul > li {
+		display: inline;
+		padding: 0px 12px !important;
+	}
+	#footer-left {
+		padding-top: 50px !important;
+	}
+	#footer-left > ul {
+		padding: 0 30px 0 0 !important;
+	}
+	#footer-middle {
+		margin: 30px auto auto -50px !important;
+	}
+	.product-collection {
+		width: 80%;
+	}
+	.product-collection .product-box {
+		padding: 20px !important;
+	}
+}
+
+@media screen and (max-width: 680px) { /* When the browsing window's width is less than 880px the following CSS is applied */
+	
+	.topnav{
+		height: auto; /* Automatically sets the height of the navigation bar to include all links */
+	}
+	
+	.topnav a:not(:nth-child(4)) { /* If the element is not the 4th child of the navigation bar, hide it. This means only the logo will be shown */
+		display: none;
+	}
+	
+	.topnav a.icon {
+    	display: block;
+    	margin: auto 0px;
+    	position: absolute; /* Element is positioned relative to its furthest parent element */
+    	top: 0; /* Ensures there is no gap between the element and the top of its bounding area */
+    	right: 0; /* Ensures there is no gap between the element and the right most part of its bounding area */
+	}
+
+	.topnav.responsive {
+  		display: block;
+  		position: relative; /* Element is positioned relative to its normal position */
+		height: auto !important;
+	}
+	
+	.topnav.responsive .icon {
+	    position: absolute;
+	    right: 0;
+	    top: 0;
+	    margin: auto 0px;
+		filter: invert(0%);
+	}
+  	
+	.topnav.responsive a {
+    	float: none; /* Element will be displayed where it currently is and won't float */
+    	display: block;
+    	text-align: center;
+    	margin: auto;
+    	max-width: 100px;
+    	border-radius: 4px;
+  	}
+  	
+	.topnav.responsive a:nth-child(4) { 
+		display: none;
+	}
+	
+	.topnav.smaller{
+		height: 120px; /* Sets the height of the navigation bar when a smaller browser is used */
+	}
+	
+	.logo{
+		margin: auto !important;
+    	position: absolute;
+    	width: 100%;
+    	padding: 10px 0 !important;
+		background-color: #0000 !important;
+		webkit-transition: 0.2s ease-in-out;
+  		-moz-transition: 0.2s ease-in-out;
+  		-ms-transition: 0.2s ease-in-out;
+  		-o-transition: 0.2s ease-in-out;
+		transition: 0.2s ease-in-out;
+	}
+	
+	.slideshow-container{
+		padding-top: 0 !important;
+	}
+	.mySlides{
+		margin-bottom: 0px !important;
+		margin-top: 0px !important;
+	}
+	.feather{
+		width: 150% !important;
+	}
+	.text{
+		display: none;
+	}
+	.logo-resp{
+		max-width: 150px !important;
+	}
+	.product-intro{
+		margin: auto !important;
+	}
+	#tattoo-salves, #hand-balms{
+		-webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%); /* Changes the shape of the product intro images */
+		clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+	}
+	.product{
+		float: left !important;
+		width: 50% !important;
+	}
+	.product-showcase {
+		width: 80% !important;
+	}
+	.product-showcase > tbody{
+		display: grid !important;
+	}
+	.product-showcase > tbody > tr:nth-child(2) > .product {
+		padding-top: 420px !important;
+	}
+	#hand-balms {
+		margin: -670px auto auto auto !important;
+	}
+	.product-intro {
+		width: 400px !important;
+    	height: 400px !important;
+	}
+	.darken {
+		transform: translateY(-400px) !important;
+	}
+	.intro-container > *:nth-child(1) {
+		font-size: 26px !important;
+		padding: 40% 0 0 0 !important;
+	}
+	.intro-container > *:nth-child(2){
+		font-size: 16px !important;
+	}
+	.icon {
+		filter: invert(100%); /* Invert the colour of the bars to make it more visible on the slideshow images */
+	}
+	.icon:hover {
+		filter: invert(0%);
+		background-color: #0000 !important;
+	}
+	.our-process {
+		width: 440px !important;
+	}
+	.our-process > div {
+		width: auto !important;
+    	padding: 0 !important;
+	}
+	.our-process > div:nth-child(2) {
+		margin-top: -30px;
+	}
+	.our-process > div > *:nth-child(1) {
+		width: 300px !important;
+    	height: 300px !important;
+	}
+	.our-process > div > *:nth-child(2) {
+		padding: 15px 0 !important;
+	}
+	.our-process > div > *:nth-child(3) {
+		transform: rotate(110deg);
+    	margin: 370px 0 0 250px !important;
+	}
+	.our-process > div:nth-child(3) > img:nth-child(3) {
+		transform: rotate(-110deg) !important;
+		margin: 370px 0 0 -10px !important;
+	}
+	footer > section > div, #footer-lower {
+		width: 70% !important;
+	}
+	#footer-left, #footer-right {
+		display: block !important;
+		margin: auto;
+	}
+	#footer-left {
+		width: fit-content !important;
+		padding: 15px 0 0 0 !important;
+	}
+	#footer-left > ul {
+		padding: 0 !important;
+		width: 100% !important;
+	}
+	footer > section > div > form {
+		width: 80% !important;
+	}
+	#footer-middle {
+		transform: rotate(90deg);
+	    margin: -160px 0 0 35% !important;
+	    display: block;
+	    height: 50% !important;
+	}
+	#footer-right {
+		padding: 30px 0 15px 0;
+   		text-align: center;
+  		width: 100%;
+	}
+	footer > section > div > form > input {
+		margin: auto;
+    	width: 92% !important;
+	}
+	
+	/* Shop Page */
+	
+	#page-title {
+		margin: 150px auto auto auto !important;
+	}
+	.product-collection .product-box {
+		padding: 20px 0 !important;
+		width: 50% !important;
+	}
+	.product-collection .product-box .product-container {
+		width: fit-content !important;
+	}
+	.product-collection .product-box:nth-child(3), .product-collection .product-box:nth-child(4) {
+		display: none;
+	}
+	#contact-content > form {
+		width: 80% !important;
+	}
+	#contact-content > form > input, #contact-content > form > textarea {
+		width: -webkit-fill-available !important;
+	}	
+}
+
+@media screen and (max-width: 440px){
+	.product-intro{
+		width: 280px !important;
+   		height: 280px !important;
+	}
+	.product-showcase > tbody > tr:nth-child(2) > .product {
+    	padding-top: 320px !important;
+	}
+	#hand-balms {
+   		margin: -560px auto auto auto !important;
+	}
+	.darken {
+		transform: translateY(-280px) !important;
+	}
+	.our-process {
+		width: 360px !important;
+	}
+	.our-process > div > *:nth-child(1) {
+		width: 200px !important;
+    	height: 200px !important;
+	}
+	.our-process > div > *:nth-child(3) {
+		margin: 270px 0 0 220px !important;
+	}
+	.our-process > div:nth-child(3) > img:nth-child(3) {
+		margin: 270px 0 0 -40px !important;
+	}
+	.intro-container > *:nth-child(1) {
+		padding: 30% 0 0 0 !important;
+	}
+	footer > section > div, #footer-lower {
+		width: 360px !important;
+	}
+	#footer-left {
+		width: 45% !important;
+		margin: auto 30% auto auto !important;
+	}
+	#footer-middle {
+		margin: -130px 0 0 180px !important;
+		height: 40% !important;
+	}
+	footer > section > div > form > input {
+		width: 92% !important;
+	}
+	.product-image {
+		width: 100% !important;
+		height: 100% !important;
+	}
+}
+
+@media screen and (max-width: 360px){
+	.slideshow-container{
+		display: none; /* On screens smaller than 360px the slideshow won't be shown */
+	}
+	#tattoo-salves{
+		margin-top: 150px !important;
+	}
+	#hand-balms {
+		margin: 10px auto auto auto !important;
+	}
+	.icon {
+		filter: invert(0%) !important;
+	}
+	.product-showcase {
+		max-width: 100% !important;
+		width: 100% !important;
+	}
+	.product-intro {
+		width: 100% !important;
+		height: calc(100vw) !important;
+	}
+	.intro-container {
+		width: 100% !important;
+	}
+	.intro-container > *:nth-child(1) {
+		padding: 20% 0 0 0 !important;
+	}
+	.darken {
+		transform: translateY(calc(-100vw)) !important;
+	}
+	.our-process {
+		width: 100% !important;
+	}
+	.product {
+		display: none;
+	}
+	.our-process > div > *:nth-child(3) {
+		margin: 270px 0 0 60% !important;
+	}
+	.our-process > div:nth-child(3) > img:nth-child(3) {
+		margin: 270px 0 0 -20px !important;
+	}
+	#tattoo-salves *:not(button), #hand-balms *:not(button) {
+		font-size: 20px !important;
+	}
+	#tattoo-salves > div > p, #hand-balms > div > p {
+		font-size: 16px !important;
+	}
+	.our-process > div > *:nth-child(1) {
+		height: calc(100vw) !important;
+		width: 100% !important;
+	}
+	.intro-container > button {
+		font-size: 16px !important;
+    	padding: 8px !important;
+	}
+	.product-container > * {
+		width: 80px !important;
+		padding: 5px;
+	}
+	.product-container > button {
+		font-size: 14px !important;
+	}
+	footer > section > div, #footer-lower {
+		width: 100% !important
+	}
+	#footer-left {
+		margin: auto !important;
+    	width: 35px !important;
+		padding: 15px 0 0 0 !important;
+	}
+	#footer-middle {
+		display: none;
+	}
+	#footer-right {
+		padding: 0 0 15px 0 !important;
+	}
+	footer > section > div > form {
+		width: 100% !important;
+
+	}
+	footer > section > div > form > input {
+		width: 80% !important;
+    	margin: auto;
+    	display: block;
+	}
+	#footer-left > ul {
+		width: 0 !important;
+		margin: 0 !important;
+	}
+	#footer-left > ul > li {
+		display: block;
+		padding: 0 !important;
+	}
+	#footer-left > ul > li > a, #footer-right > p > a {
+		overflow-wrap: break-word;
+	}
+}
+
+@media screen and (min-width: 880px){
+	.product-collection .product-box {
+		padding: 40px !important;
+	}
+}
+
+@media screen and (min-width: 680px){
+	.logo{
+		margin: 100px auto auto auto !important;
+    	position: absolute;
+    	width: 100%;
+    	padding: 10px 0 !important;
+		background-color: #0000 !important;
+		webkit-transition: 0.2s ease-in-out;
+  		-moz-transition: 0.2s ease-in-out;
+  		-ms-transition: 0.2s ease-in-out;
+  		-o-transition: 0.2s ease-in-out;
+		transition: 0.2s ease-in-out;
+	}
+}
+
+/* Other Pages */
+
+#page-title {
+	width: 180px;
+    margin: 250px auto auto auto;
+    text-align: center;
+}
+
+/* Shop Page */
+
+.product-collection {
+	margin: auto;
+    border: 0;
+    border-spacing: 0px;
+    border-collapse: collapse;
+}
+
+.product-collection .product-box {
+	width: 25%;
+}
+
+/* About Page */
+
+#about-content {
+    width: 1000px;
+    margin: auto;
+}
+
+/* Contact Page */
+
+#contact-content {
+	width: 1000px;
+    margin: auto;
+}
+
+#contact-content > form {
+	width: fit-content;
+	margin: auto;
+	font-family: supria-sans, sans-serif;
+}
+
+#contact-content > form > input {
+	width: 200px;
+    padding: 12px;
+    border-color: #d39030;
+    border-style: solid;
+    border-width: 3px;
+    border-radius: 4px;
+    font-weight: bold;
+    background-color: #eaeaea;
+}
+
+#contact-content > form > button {
+	border-radius: 4px;
+    color: white;
+    background-color: #eca43b;
+    border-color: #d39030;
+    border-style: solid;
+    border-width: 3px;
+    padding: 12px;
+    font-family: maple-web;
+    font-size: 16px;
+    cursor: pointer;
+    text-shadow: none !important;
+}
+
+#contact-content > form > textarea {
+	width: 400px;
+	padding: 12px;
+    border-color: #d39030;
+    border-style: solid;
+    border-width: 3px;
+    border-radius: 4px;
+    font-family: supria-sans, sans-serif;
+    font-weight: bold;
+    background-color: #eaeaea;
+}
+
+.product-page {
+	width: 1000px;
+	margin: auto;
+}
+
+.product-page > tbody > tr:nth-child(1) > td, .product-page > tbody > tr:nth-child(2) > td {
+	width: 50%;
+}
+
+.product-page > tbody > tr:nth-child(1) > td:nth-child(1) > div, .product-page > tbody > tr:nth-child(1) >td:nth-child(2) > div, .product-page > tbody > tr:nth-child(2) > td > div {
+	width: fit-content;
+	margin: auto;
+}
+
+.product-image {
+	width:300px;
+	height: 300px;
+}
+
+.product-page > tbody > tr:nth-child(1) > td:nth-child(2) > h2, .product-page > tbody > tr:nth-child(2) > td > h2 {
+	margin: auto;
+	width: fit-content;
+	padding: 20px;
+	text-align: center;
+}
+
+.product-page > tbody > tr:nth-child(1) > td:nth-child(2) > p:nth-child(3), .product-page > tbody > tr:nth-child(2) > td > p:nth-child(3) {
+	width:fit-content;
+	margin: auto;
+	padding: 20px;
+	text-align: center;
+}
+
+.product-page > tbody > tr:nth-child(1) > td:nth-child(2) > p:nth-child(4), .product-page > tbody > tr:nth-child(2) > td > p:nth-child(4) {
+	width: fit-content;
+	margin: auto;
+}
+
+.product-page > tbody > tr:nth-child(1) > td:nth-child(2) > button, .product-page > tbody > tr:nth-child(2) > td > button {
+	width:-webkit-fill-available;
+	margin: 20px auto auto auto;
+}
+#contact-content > form > button:hover {
+	background-color: #d39030;
+    color: #eaeaea;
+}
+
+#mobile-content {
+	display: none;
+}
+

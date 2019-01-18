@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+	<head> <!-- The back-end working of the website -->
+		<link href="styles/main.css" rel="stylesheet" type="text/css"> <!-- The main css file used -->
+		<link rel="stylesheet" href="https://use.typekit.net/ovr2aht.css"> <!-- Adobe font css file -->
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous"> <!-- Font Awesome css file -->
+		<link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
+		<link rel="manifest" href="images/favicon/site.webmanifest">
+		<link rel="mask-icon" href="images/favicon/safari-pinned-tab.svg" color="#5bbad5">
+		<meta name="msapplication-TileColor" content="#00a300">
+		<meta name="theme-color" content="#ffffff">
+		<script src="scripts/headeronscroll.js"></script> <!-- The JavaScript file that allows the logo to change size when the user scrolls -->
+		<meta charset="utf-8"> <!-- Defines the character encoding for this website -->
+		<meta name="description" content="Organic, handmade wares"> <!-- Provides a description of the website for search engines -->
+		<meta name="keywords" content="organic, handmade, beeswax, apitherapy, kittens 'n' kads"> <!-- Provides keywords that relate to the website -->
+		<meta name="author" content="Tom Paddon"> <!-- Shows the author of the website -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Defines the initial viewport width for the browser allowing for scaling -->
+		<title>Contact | Kittens 'N' Kads</title> <!-- The title of the website - shown in a browser tab -->
+	</head>
+	
+	<body> <!-- The visible elements of the website -->
+		<header> <!-- The top section of the website -->
+			<nav> <!-- Used to house the main navigation system -->
+				<div class="topnav" id="myTopnav">
+					<img src="images/art/navbarend.png" alt="Left Navigation Bar End" id="nav-left" /> <!-- The left end of the navigation bar -->
+  					<a class="navlink" href="index.html">Home</a> <!-- Links to the different website pages -->
+  					<a class="navlink" href="shop.html">Shop</a>
+  					<a href="index.html" class="active logo" id="logo-scroll">
+						<img src="images/logo.png" alt="Kittens 'N' Kads Logo" class="logo-resp" id="logo-image"> <!-- Image wrapped in link element to allow the user to click it -->
+					</a>
+  					<a class="navlink" href="about.html">About</a>
+  					<a class="navlink" href="contact.html">Contact</a>
+  					<a href="javascript:void(0);" class="icon" id="bars" onclick="barsClicked()"> <!-- Executes the barsClicked JavaScript function to allow for collapsable top menu -->
+    					<i class="fa fa-bars"></i> <!-- Font awesome horizontal menu bars -->
+  					</a>
+					<img src="images/art/navbarend.png" alt="Right Navigation Bar End" id="nav-right" /> <!-- The right end of the navigation bar -->
+				</div>
+				<script> // Script Element to change the menu type depending on screen size
+					function barsClicked() { // Creates a function called barsClicked
+						var x = document.getElementById("myTopnav"); // Finds the element with id "myTopnav" and stores it as x
+  						if (x.className === "topnav" || x.className === "topnav smaller") { // Tests if the class name of the element it previously found equals (===) "topnav" or (||) "topnav smaller"
+    						x.className += " responsive"; // If the test is true, it adds the class "responsive" to the element
+  						} else if (x.className === "topnav smaller responsive"){ // If the first test is false it tests if the class name of the found element is "topnav smaller responsive"
+							x.className = "topnav smaller"; // If it is it replaces the class with "topnav smaller"
+						} else { // Else runs when the previous if statements are all false
+    						x.className = "topnav"; // In this case it just replaces the class with "topnav"
+  						}
+					}
+				</script>
+			</nav>
+		</header>
+		<main> <!-- The main content of the website -->
+			<h1 id="page-title">Contact Us</h1>
+			<div id="contact-content">
+				<p>You can contact us either by using the form below or by reaching out to us on any of our social media 	channels. We look forward to hearing from you!</p>
+				<form>
+					Name:<br />
+  					<input type="text" name="name" value=""><br />
+  					Email:<br />
+  					<input type="email" name="email" value=""><br />
+					Message:<br />
+					<textarea name="message" rows="10" cols="30" placeholder="Enter your message here..."></textarea><br />
+					<button>Submit</button>
+				</form>
+			</div>
+		</main>
+		<footer> <!-- A place to put any other links and company information -->
+			<section>
+				<div>
+					<h3>Updates from the apiary...</h3>
+					<form> <!-- Email signup form -->
+						<input type="email" placeholder="Our mailing list is packed full of goodness..."> <!-- Allows 	user to input text, in this case an email address -->
+						<button>Sign Up</button> <!-- Button used to submit form -->
+					</form>
+				</div>
+			</section>
+			<div id="footer-lower">
+				<div id="footer-left"> <!-- Social media links -->
+					<ul> <!-- Unordered list to house social media links -->
+						<li>
+							<a href="#" target="_blank" title="Facebook Icon"> <!-- _blank target opens link in new tab -->
+								<img src="images/socialmedia/facebook.png" alt="Facebook" class="social-icon">
+							</a>
+						</li>
+						<li>
+							<a href="#" target="_blank" title="Instagram Icon">
+								<img src="images/socialmedia/instagram.png" alt="Instagram" class="social-icon">
+							</a>
+						</li>
+						<li>
+							<a href="#" target="_blank" title="Twitter Icon">
+								<img src="images/socialmedia/twitter.png" alt="Twitter" class="social-icon">
+							</a>
+						</li>
+					</ul>
+				</div>
+				<div id="footer-middle"></div>
+				<div id="footer-right"><!-- Other contact information. ID "separate" used to create a separating line between this and the social media links -->
+					<p>Phone: <a href="tel:+441234567890">01234 567890</a></p><!-- "tel" link allows user to call the number when it's clicked - useful for mobile -->
+					<p>Email: <a href="mailto:placeholder@kittensnkads.com">placeholder@kittensnkads.com</a></p><!-- "mailto" link allows user to email the address when it's clicked -->
+					<p>Copyright &copy; Kittens 'N' Kads 2019. All Rights Reserved.</p><!-- Standard copyright information -->
+				</div>
+			</div>
+		</footer>
+	</body>
+</html>

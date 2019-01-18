@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="en">
+	<head> <!-- The back-end working of the website -->
+		<link href="styles/main.css" rel="stylesheet" type="text/css"> <!-- The main css file used -->
+		<link rel="stylesheet" href="https://use.typekit.net/ovr2aht.css"> <!-- Adobe font css file -->
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous"> <!-- Font Awesome css file -->
+		<link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
+		<link rel="manifest" href="images/favicon/site.webmanifest">
+		<link rel="mask-icon" href="images/favicon/safari-pinned-tab.svg" color="#5bbad5">
+		<meta name="msapplication-TileColor" content="#00a300">
+		<meta name="theme-color" content="#ffffff">
+		<script src="scripts/headeronscroll.js"></script> <!-- The JavaScript file that allows the logo to change size when the user scrolls -->
+		<meta charset="utf-8"> <!-- Defines the character encoding for this website -->
+		<meta name="description" content="Organic, handmade wares"> <!-- Provides a description of the website for search engines -->
+		<meta name="keywords" content="organic, handmade, beeswax, apitherapy, kittens 'n' kads"> <!-- Provides keywords that relate to the website -->
+		<meta name="author" content="Tom Paddon"> <!-- Shows the author of the website -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Defines the initial viewport width for the browser allowing for scaling -->
+		<title>Homepage | Kittens 'N' Kads</title> <!-- The title of the website - shown in a browser tab -->
+	</head>
+	
+	<body> <!-- The visible elements of the website -->
+		<header> <!-- The top section of the website -->
+			<nav> <!-- Used to house the main navigation system -->
+				<div class="topnav" id="myTopnav">
+					<img src="images/art/navbarend.png" alt="Left Navigation Bar End" id="nav-left" /> <!-- The left end of the navigation bar -->
+  					<a class="navlink" href="index.html">Home</a> <!-- Links to the different website pages -->
+  					<a class="navlink" href="shop.html">Shop</a>
+  					<a href="index.html" class="active logo" id="logo-scroll">
+						<img src="images/logo.png" alt="Kittens 'N' Kads Logo" class="logo-resp" id="logo-image"> <!-- Image wrapped in link element to allow the user to click it -->
+					</a>
+  					<a class="navlink" href="about.html">About</a>
+  					<a class="navlink" href="contact.html">Contact</a>
+  					<a href="javascript:void(0);" class="icon" id="bars" onclick="barsClicked()"> <!-- Executes the barsClicked JavaScript function to allow for collapsable top menu -->
+    					<i class="fa fa-bars"></i> <!-- Font awesome horizontal menu bars -->
+  					</a>
+					<img src="images/art/navbarend.png" alt="Right Navigation Bar End" id="nav-right" /> <!-- The right end of the navigation bar -->
+				</div>
+				<script> // Script Element to change the menu type depending on screen size
+					function barsClicked() { // Creates a function called barsClicked
+						var x = document.getElementById("myTopnav"); // Finds the element with id "myTopnav" and stores it as x
+  						if (x.className === "topnav" || x.className === "topnav smaller") { // Tests if the class name of the element it previously found equals (===) "topnav" or (||) "topnav smaller"
+    						x.className += " responsive"; // If the test is true, it adds the class "responsive" to the element
+  						} else if (x.className === "topnav smaller responsive"){ // If the first test is false it tests if the class name of the found element is "topnav smaller responsive"
+							x.className = "topnav smaller"; // If it is it replaces the class with "topnav smaller"
+						} else { // Else runs when the previous if statements are all false
+    						x.className = "topnav"; // In this case it just replaces the class with "topnav"
+  						}
+					}
+				</script>
+			</nav>
+			<div class="slideshow-container"> <!-- Houses the slideshow hero section -->
+				<div class="mySlides fade"> <!-- mySlides class applies to each slideshow image and the fade class determines the animation -->
+  					<img src="images/herobanner/car.jpg" alt="Drag Racing Car" style="width:100%"> <!-- The Image used in the slideshow. The inline style property allows for the image's width to be the full width of the document -->
+					<div class="feather fade"></div> <!-- Applies the feather class that smoothes the image into the rest of the webpage. Also applies the fade transition animation -->
+  					<h2 class="text">You'll always find something new in our ever-growing range of handmade products</h2>
+				</div>
+				<div class="mySlides fade">
+  					<img src="images/herobanner/tools.jpg" alt="Collection of Tools" style="width:100%">
+					<div class="feather fade"></div>
+  					<h2 class="text">100% organic wax meaning you'll only get the best for your skin</h2>
+				</div>
+				<div class="mySlides fade">
+  					<img src="images/herobanner/weight.jpg" alt="Man Lifting Weights" style="width:100%">
+					<div class="feather fade"></div>
+  					<h2 class="text">It must bee love - nothing's left to waste with our perfected creation process</h2>
+				</div>
+				<script> // Used in-document script as it's easier to keep track of
+					var slideIndex = 0; // Sets the variable slideIndex to 0
+					showSlides(); // Initiates the showSlides function
+
+					function showSlides() { // Creates the showSlides function
+  						var i; // Creates variable i
+  						var slides = document.getElementsByClassName("mySlides"); // Creates variable slides and finds all elements with the class mySlides
+  						for (i = 0; i < slides.length; i++) { // Initiates a for loop that starts at 0 continues until the number of slides is reached
+    						slides[i].style.display = "none"; // For each iteration, the display style of the slide is set to none - this hides the slide
+  						}
+  						slideIndex++; // Increases the slideIndex number by 1
+  						if (slideIndex > slides.length) {slideIndex = 1} // Tests if the slideIndex number is greater than the amount of slides and if it's true, sets the slideIndex number to 1. This allows the slideshow to loop
+  						slides[slideIndex-1].style.display = "block"; // Displays the current slide by setting the display mode to block
+  						setTimeout(showSlides, 4000); // Changes the image every 4 seconds
+					}
+				</script>
+			</div>
+		</header>
+		<main> <!-- The main content of the website -->
+			<table class="product-showcase"> <!-- Table used to split this section into a grid -->
+				<tr> <!-- Table row -->
+					<td colspan="2"> <!-- Table cell with a column span of 2 meaning it'll be the same size horizontally as 2 standard columns -->
+						<div class="product-intro" id="tattoo-salves">
+							<div class="intro-container">
+								<h3>Tattoo Salves</h3>
+								<p>New ink giving you jip? Our tattoo salves will save your skin.</p>
+								<button onclick="location.href='shop.html'" type="button">Shop Now</button>
+							</div>
+							<div class="darken"></div>
+						</div>
+					</td>
+					<td class="product"> <!-- Product showcase -->
+						<div class="product-container">
+							<img src="images/productimages/product.png" alt="Tattoo Salve Product">
+							<img src="images/art/reviews.png" alt="Product Reviews" class="product-reviews"><!-- Image that will be replaced with customer reviews when available -->
+							<h3>
+								<a href="#">Tattoo Salve</a>
+							</h3>
+							<p>£9.99</p>
+							<button onclick="location.href='product.html'" type="button">View Product</button> <!-- Linked to product page -->
+						</div>
+					</td>
+					<td class="product">
+						<div class="product-container">
+							<img src="images/productimages/product.png" alt="Tattoo Salve Product">
+							<img src="images/art/reviews.png" alt="Product Reviews" class="product-reviews">
+							<h3>
+								<a href="#">Tattoo Salve</a>
+							</h3>
+							<p>£9.99</p>
+							<button onclick="location.href='product.html'" type="button">View Product</button>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td class="product">
+						<div class="product-container">
+							<img src="images/productimages/product.png" alt="Hand Balm Product">
+							<img src="images/art/reviews.png" alt="Product Reviews" class="product-reviews">
+							<h3>
+								<a href="#">Hand Balm</a>
+							</h3>
+							<p>£7.99</p>
+							<button onclick="location.href='product.html'" type="button">View Product</button>
+						</div>
+					</td>
+					<td class="product">
+						<div class="product-container">
+							<img src="images/productimages/product.png" alt="Hand Balm Product">
+							<img src="images/art/reviews.png" alt="Product Reviews" class="product-reviews">
+							<h3>
+								<a href="#">Hand Balm</a>
+							</h3>
+							<p>£7.99</p>
+							<button onclick="location.href='product.html'" type="button">View Product</button>
+						</div>
+					</td>
+					<td colspan="2">
+						<div class="product-intro" id="hand-balms">
+							<div class="intro-container">
+								<h3>Hand Balms</h3>
+								<p>Don't leave your hands rough as rats. Get our balms for your palms.</p>
+								<button onclick="location.href='shop.html'" type="button">Shop Now</button>
+							</div>
+							<div class="darken"></div>
+						</div>
+					</td>
+				</tr>
+			</table>
+			<section class="our-process"> <!-- Section element splits up webpage into managable parts. This is the "Our Processes" section -->
+				<h2>Our Process</h2>
+					<div>
+						<img src="images/contextimages/beehoney.jpg" alt="Bee Standing on Honey">
+						<p>Harvest the honey; collect the wax...</p>
+						<img src="images/art/arrow.png" alt="Arrow">
+					</div>
+					<div>
+						<img src="images/contextimages/scrapingwax.jpg" alt="Scraping the Honey from the Wax">
+						<p>Process the wax. <i>Organic only...</i></p>
+						<img src="images/art/arrow.png" alt="Arrow">
+					</div>
+					<div>
+						<img src="images/contextimages/packaging.png" alt="Kittens 'N' Kads Product Packaging">
+						<p>Package it up. Biodegradable? <i>You bet!</i></p>
+					</div>
+			</section>
+		</main>
+		<footer> <!-- A place to put any other links and company information -->
+			<section>
+				<div>
+					<h3>Updates from the apiary...</h3>
+					<form> <!-- Email signup form -->
+						<input type="email" placeholder="Our mailing list is packed full of goodness..."> <!-- Allows 	user to input text, in this case an email address -->
+						<button>Sign Up</button> <!-- Button used to submit form -->
+					</form>
+				</div>
+			</section>
+			<div id="footer-lower">
+				<div id="footer-left"> <!-- Social media links -->
+					<ul> <!-- Unordered list to house social media links -->
+						<li>
+							<a href="#" target="_blank" title="Facebook Icon"> <!-- _blank target opens link in new tab -->
+								<img src="images/socialmedia/facebook.png" alt="Facebook" class="social-icon">
+							</a>
+						</li>
+						<li>
+							<a href="#" target="_blank" title="Instagram Icon">
+								<img src="images/socialmedia/instagram.png" alt="Instagram" class="social-icon">
+							</a>
+						</li>
+						<li>
+							<a href="#" target="_blank" title="Twitter Icon">
+								<img src="images/socialmedia/twitter.png" alt="Twitter" class="social-icon">
+							</a>
+						</li>
+					</ul>
+				</div>
+				<div id="footer-middle"></div>
+				<div id="footer-right"><!-- Other contact information. ID "separate" used to create a separating line between this and the social media links -->
+					<p>Phone: <a href="tel:+441234567890">01234 567890</a></p><!-- "tel" link allows user to call the number when it's clicked - useful for mobile -->
+					<p>Email: <a href="mailto:placeholder@kittensnkads.com">placeholder@kittensnkads.com</a></p><!-- "mailto" link allows user to email the address when it's clicked -->
+					<p>Copyright &copy; Kittens 'N' Kads 2019. All Rights Reserved.</p><!-- Standard copyright information -->
+				</div>
+			</div>
+		</footer>
+	</body>
+</html>

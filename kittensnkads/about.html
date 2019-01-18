@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+	<head> <!-- The back-end working of the website -->
+		<link href="styles/main.css" rel="stylesheet" type="text/css"> <!-- The main css file used -->
+		<link rel="stylesheet" href="https://use.typekit.net/ovr2aht.css"> <!-- Adobe font css file -->
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous"> <!-- Font Awesome css file -->
+		<link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
+		<link rel="manifest" href="images/favicon/site.webmanifest">
+		<link rel="mask-icon" href="images/favicon/safari-pinned-tab.svg" color="#5bbad5">
+		<meta name="msapplication-TileColor" content="#00a300">
+		<meta name="theme-color" content="#ffffff">
+		<script src="scripts/headeronscroll.js"></script> <!-- The JavaScript file that allows the logo to change size when the user scrolls -->
+		<meta charset="utf-8"> <!-- Defines the character encoding for this website -->
+		<meta name="description" content="Organic, handmade wares"> <!-- Provides a description of the website for search engines -->
+		<meta name="keywords" content="organic, handmade, beeswax, apitherapy, kittens 'n' kads"> <!-- Provides keywords that relate to the website -->
+		<meta name="author" content="Tom Paddon"> <!-- Shows the author of the website -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Defines the initial viewport width for the browser allowing for scaling -->
+		<title>About | Kittens 'N' Kads</title> <!-- The title of the website - shown in a browser tab -->
+	</head>
+	
+	<body> <!-- The visible elements of the website -->
+		<header> <!-- The top section of the website -->
+			<nav> <!-- Used to house the main navigation system -->
+				<div class="topnav" id="myTopnav">
+					<img src="images/art/navbarend.png" alt="Left Navigation Bar End" id="nav-left" /> <!-- The left end of the navigation bar -->
+  					<a class="navlink" href="index.html">Home</a> <!-- Links to the different website pages -->
+  					<a class="navlink" href="shop.html">Shop</a>
+  					<a href="index.html" class="active logo" id="logo-scroll">
+						<img src="images/logo.png" alt="Kittens 'N' Kads Logo" class="logo-resp" id="logo-image"> <!-- Image wrapped in link element to allow the user to click it -->
+					</a>
+  					<a class="navlink" href="about.html">About</a>
+  					<a class="navlink" href="contact.html">Contact</a>
+  					<a href="javascript:void(0);" class="icon" id="bars" onclick="barsClicked()"> <!-- Executes the barsClicked JavaScript function to allow for collapsable top menu -->
+    					<i class="fa fa-bars"></i> <!-- Font awesome horizontal menu bars -->
+  					</a>
+					<img src="images/art/navbarend.png" alt="Right Navigation Bar End" id="nav-right" /> <!-- The right end of the navigation bar -->
+				</div>
+				<script> // Script Element to change the menu type depending on screen size
+					function barsClicked() { // Creates a function called barsClicked
+						var x = document.getElementById("myTopnav"); // Finds the element with id "myTopnav" and stores it as x
+  						if (x.className === "topnav" || x.className === "topnav smaller") { // Tests if the class name of the element it previously found equals (===) "topnav" or (||) "topnav smaller"
+    						x.className += " responsive"; // If the test is true, it adds the class "responsive" to the element
+  						} else if (x.className === "topnav smaller responsive"){ // If the first test is false it tests if the class name of the found element is "topnav smaller responsive"
+							x.className = "topnav smaller"; // If it is it replaces the class with "topnav smaller"
+						} else { // Else runs when the previous if statements are all false
+    						x.className = "topnav"; // In this case it just replaces the class with "topnav"
+  						}
+					}
+				</script>
+			</nav>
+		</header>
+		<main> <!-- The main content of the website -->
+			<h1 id="page-title">About Us</h1>
+			<div id="about-content">
+				<h2>Our Aim</h2>
+				<p>The health and beauty benefits of honey and beeswax are tried, tested and well documented. My hope for Kittens 'n' Kads is to offer a growing range of beeswax-based cosmetic products.</p>
+				<h2>What We Do</h2>
+				<p>Original eco-friendly beeswax product company. I use the finest organic beeswax. All production is completed by me, the process is low impact and sustainable.</p>
+				<p>From healthy cared for bees all the way to the product, Kittens ‘n’ Kads is made with pure intention and ingredients. The beeswax is made by nature’s worker bees. No artificial scents or colours are required.</p>
+				<h2>Sustainability</h2>
+				<p>Almost 300 million tons of plastic is being produced every year. A lot of that plastic is necessary to make useful things that last. But all too often, the plastic we use ends up in the wrong place.</p>
+				<p>Right now, our oceans are filling up with plastic that degrades into smaller and smaller pieces of microplastics. If nothing changes, by 2050 there will be more plastic waste in our oceans than fish.</p>
+				<p>Our oceans need a new wave of sustainable solutions. And – just as it’s always been – that change is being driven by people.</p>
+				<p>The packaging is a biodegradable and microplastic-free material made entirely from renewable sources and FSC-certified wood.</p>
+				<h2>Making the Balm</h2>
+				<p>I love making as many of my personal care items in order to cut down on toxins in our home and on our bodies.</p>
+				<p>If you're looking for a homemade balm that will nourish your skin, look no further. My recipes are super nourishing, super versatile and super simple. And I've updated it with essential oils suitable for your skin's needs.</p>
+				<h2>Ingredients</h2>
+				<h4>Hand Balms</h4>
+				<ul>
+					<li>Calendula</li>
+					<li>Argan oil</li>
+					<li>Jojoba</li>
+					<li>Beeswax</li>
+					<li>Murumuru butter</li>
+					<li>Cocoa butter</li>
+					<li>Essential oils – Myrrh and cedarwood</li>
+				</ul>
+				<h4>Tattoo Salves</h4>
+				<ul>
+					<li>Beeswax</li>
+					<li>Calendula</li>
+					<li>Jojoba</li>
+					<li>Hemp</li>
+					<li>Murumuru butter</li>
+					<li>Cocoa butter</li>
+					<li>Essential oils – Vetiver and Geranium Bourbon</li>
+				</ul>
+				<h2>Benefits</h2>
+				<p><b>Murumuru butter</b> – Fatty acid and pro-vitamin help restore elasticity to damaged, ageing skin. Heals dry cracked skin, eczema and psoriasis.</p>
+				<p><b>Hemp oil</b> – Regenerates skins protective layer, long-lasting moisture, skin calming, suitable for all skin types.</p>
+				<p><b>Calendula</b> – Speed healing, improve skin appearance, lower inflammation, antioxidant. Good for dry chapped or split skin.</p>
+				<p><b>Jojoba oil</b> – Fights infections, contains vitamin E and vitamin B complex. Suits all skin types. Works as a good cleanser, balances oils, treats skin disorders, reduces inflammation.</p>
+				<p><b>Beeswax</b> – Natural skin protectant that soothes and hydrates. Protects against environmental damage, for example, traffic pollution and cigarette smoke. Contains vitamin A and soothes itching.</p>
+				<h4>Essential oils</h4>
+				<p><b>Myrrh</b> – Anti-inflammatory, improve skin tone elasticity, heals sun damage, chapped skin, rashes and eczema.</p>
+				<p><b>Vetiver</b> – reduces inflammation, eliminates scars, prevents bacterial infections and speeds up healing</p>
+				<p><b>Geranium bourbon</b> – Reduces irritation, cell growth, wound healing</p>
+				<p><b>Cedarwood</b> – Prevents infections, reduces inflammation, insect repellent, fights fungal infections, reduces skin irritation.</p>
+
+				<h2>Key Facts</h2>
+				<ul>
+					<li>100% organic</li>
+					<li>I use my own bee’s premium organic white beeswax</li>
+					<li>The artwork is drawn and painted by my mum </li>
+					<li>All balms are named after 1950’s and 1960’s gasser race cars</li>
+					<li>Beeswax is a natural skin protectant</li>
+					<li>KIttens ‘n’ Kads means Guys and Girls</li>
+					<li>The essential oils I use improve the vibrancy of your tattoo, even old tattoos</li>
+					<li>I have completed 3 different courses to perfect the recipe</li>
+					<li>I use no plastics</li>
+					<li>Packaging arrives in March and is 100% biodegradable</li>
+				</ul>
+			</div>
+			<section class="our-process"> <!-- Section element splits up webpage into managable parts. This is the "Our Processes" section -->
+				<h2>Our Process</h2>
+					<div>
+						<img src="images/contextimages/beehoney.jpg" alt="Bee Standing on Honey">
+						<p>Harvest the honey; collect the wax...</p>
+						<img src="images/art/arrow.png" alt="Arrow">
+					</div>
+					<div>
+						<img src="images/contextimages/scrapingwax.jpg" alt="Scraping the Honey from the Wax">
+						<p>Process the wax. <i>Organic only...</i></p>
+						<img src="images/art/arrow.png" alt="Arrow">
+					</div>
+					<div>
+						<img src="images/contextimages/packaging.png" alt="Kittens 'N' Kads Product Packaging">
+						<p>Package it up. Biodegradable? <i>You bet!</i></p>
+					</div>
+			</section>
+		</main>
+		<footer> <!-- A place to put any other links and company information -->
+			<section>
+				<div>
+					<h3>Updates from the apiary...</h3>
+					<form> <!-- Email signup form -->
+						<input type="email" placeholder="Our mailing list is packed full of goodness..."> <!-- Allows 	user to input text, in this case an email address -->
+						<button>Sign Up</button> <!-- Button used to submit form -->
+					</form>
+				</div>
+			</section>
+			<div id="footer-lower">
+				<div id="footer-left"> <!-- Social media links -->
+					<ul> <!-- Unordered list to house social media links -->
+						<li>
+							<a href="#" target="_blank" title="Facebook Icon"> <!-- _blank target opens link in new tab -->
+								<img src="images/socialmedia/facebook.png" alt="Facebook" class="social-icon">
+							</a>
+						</li>
+						<li>
+							<a href="#" target="_blank" title="Instagram Icon">
+								<img src="images/socialmedia/instagram.png" alt="Instagram" class="social-icon">
+							</a>
+						</li>
+						<li>
+							<a href="#" target="_blank" title="Twitter Icon">
+								<img src="images/socialmedia/twitter.png" alt="Twitter" class="social-icon">
+							</a>
+						</li>
+					</ul>
+				</div>
+				<div id="footer-middle"></div>
+				<div id="footer-right"><!-- Other contact information. ID "separate" used to create a separating line between this and the social media links -->
+					<p>Phone: <a href="tel:+441234567890">01234 567890</a></p><!-- "tel" link allows user to call the number when it's clicked - useful for mobile -->
+					<p>Email: <a href="mailto:placeholder@kittensnkads.com">placeholder@kittensnkads.com</a></p><!-- "mailto" link allows user to email the address when it's clicked -->
+					<p>Copyright &copy; Kittens 'N' Kads 2019. All Rights Reserved.</p><!-- Standard copyright information -->
+				</div>
+			</div>
+		</footer>
+	</body>
+</html>
