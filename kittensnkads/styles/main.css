@@ -57,6 +57,7 @@ nav{
   font-size: 17px; 
   margin: auto; /* Automatically sets the element's margin values based on its parent element */
   border-radius: 4px; /* Creates rounded corners for the element */
+  height: 20px;
 }
 
 .topnav a:hover { /* Sets element styles when the user hovers over it */
@@ -143,6 +144,11 @@ nav{
     height: 100%;
     margin-left: -100px;
 	background: rgba(52, 58, 52, 0.3);
+}
+
+#logo-scroll {
+	left: 0;
+	background-color: transparent;
 }
 
 /* Caption text */
@@ -273,6 +279,11 @@ nav{
 .product-container > h3 > a {
 	color: black;
     text-decoration: none;
+	margin: auto;
+}
+
+.product-container > p {
+	width:40px;
 }
 
 button {
