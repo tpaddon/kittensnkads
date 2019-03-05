@@ -82,10 +82,12 @@ nav{
 #nav-left{
 	transform: rotate(180deg); /* Rotates the element 180 degrees */
     margin: auto auto auto -150px; /* Sets all margins to auto except the left one which is set to -150px */
+	height:59px;
 }
 
 #nav-right{
-	margin: auto -150px auto auto /* Sets all margins to auto except the right one which is set to -150px */
+	margin: auto -150px auto auto; /* Sets all margins to auto except the right one which is set to -150px */
+	height: 59px;
 }
 
 .logo.smaller{
@@ -265,6 +267,7 @@ nav{
     margin: auto;
 	padding-bottom: 15px;
 	text-align: center;
+	display: -ms-flexbox;
 }
 
 .product-container > h3 > a {
@@ -713,12 +716,13 @@ footer > section > div > form > input:focus::placeholder {
     	position: absolute;
     	width: 100%;
     	padding: 10px 0 !important;
-		background-color: #0000 !important;
 		webkit-transition: 0.2s ease-in-out;
   		-moz-transition: 0.2s ease-in-out;
   		-ms-transition: 0.2s ease-in-out;
   		-o-transition: 0.2s ease-in-out;
 		transition: 0.2s ease-in-out;
+		left: 0;
+		background-color: transparent !important;
 	}
 	
 	.slideshow-container{
